@@ -1,0 +1,8 @@
+CREACION##################
+create keyspace bd04 with replication = {'class':'SimpleStrategy', 'replication_factor':1};
+use bd04;
+CREATE TABLE bd04.users (username text PRIMARY KEY,email text,password text);
+CREATE TABLE bd04.producto (product int PRIMARY KEY, descripcion text,iventario int,nombre text,peso int,tamano int,valor int);
+CREATE TABLE bd04.carrito_by_user (car int PRIMARY KEY,status int,username text);
+CREATE TABLE bd04.product_by_car ( car int,product int, cantidad int, status int, valor int, PRIMARY KEY (car, product));
+
